@@ -1,0 +1,8 @@
+<p>
+  room-navigation works!
+</p>
+
+<div *ngFor="let room of rooms">
+  <a routerLink="/house/{{ room.name }}">{{ room.name }}</a>
+  <p>{{ room.temperature }}</p>
+</div>
