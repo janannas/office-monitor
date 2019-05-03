@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e3e3e3;
+  font-family: "Quicksand", sans-serif;
+  color: #f9f9f9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}

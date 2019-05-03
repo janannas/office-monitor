@@ -1,11 +1,24 @@
-<h1>Welcome to Your Office Monitor!</h1>
-<img src="../assets/images/home_icon.svg" alt="Product icon" />
-<h2>Choose House:</h2>
-<nav>
-  <a
-    routerLink="/navigation"
-    routerLinkActive="linkActive"
-    [routerLinkActiveOptions]="{ exact: true }"
-    ><li>House1</li></a
-  >
-</nav>
+<main>
+  <div>
+    <h1>
+      Välkommen <br />
+      till Din <br />
+      Kontors Monitor!
+    </h1>
+  </div>
+  <img src="../assets/images/home_icon.svg" alt="Product icon" />
+  <h2>Välj ett hus:</h2>
+  <nav>
+    <a
+      routerLink="/navigation"
+      routerLinkActive="linkActive"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <li>Hus1</li>
+    </a>
+
+    <li class="disabled">Hus2</li>
+
+    <li class="disabled">Hus3</li>
+  </nav>
+</main>
