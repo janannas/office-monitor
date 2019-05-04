@@ -25,8 +25,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/css/weather-icons.css",
-              "src/assets/fonts/weathericons-regular-webfont.woff",
-              "src/assets/fonts/weathericons-regular-webfont.svg",
+              "src/assets/font/weathericons-regular-webfont.woff",
+              "src/assets/font/weathericons-regular-webfont.svg",
               "src/styles.scss",
               "src/assets/fonts/Quicksand/Quicksand-Light.ttf"
             ],
