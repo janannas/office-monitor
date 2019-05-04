@@ -1,5 +1,7 @@
+@import "~src/variables";
+
 main {
-  background-image: linear-gradient(#4a498a, #2d2c66, #2d2c66);
+  background-image: $main-gradient-color;
 
   display: flex;
   flex-direction: column;
@@ -41,14 +43,12 @@ nav {
   margin-bottom: 50px;
 
   li:first-child {
-    color: #f9f9f9;
-
     &:hover {
       transition: ease 0.2s;
-      color: orange;
+      color: $main-contrast-color;
     }
   }
   .disabled {
-    color: grey;
+    color: $disabled-color;
   }
 }
