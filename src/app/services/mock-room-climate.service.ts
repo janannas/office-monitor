@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
-import { IHouse } from "../interfaces/IHouse";
 import { of, Observable } from "rxjs";
+import { IRoomClimateService } from "../interfaces/IRoomClimateService";
+import { IHouse } from "../interfaces/IHouse";
 
 @Injectable({
   providedIn: "root"
 })
-export class MockRoomClimateService {
-  mockHouse = {
+export class MockRoomClimateService implements IRoomClimateService {
+  mockHouse: IHouse = {
     rooms: [
       {
         name: "Vardagsrum",
@@ -49,7 +50,7 @@ export class MockRoomClimateService {
 
   constructor() {}
 
-  startClimateUpdate() {
+  startClimateUpdate(): void {
     if (this.updateStarted) {
       return;
     } else {
