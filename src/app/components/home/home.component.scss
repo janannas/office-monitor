@@ -1,7 +1,7 @@
 @import "~src/variables";
 
 main {
-  background-image: $main-gradient-color;
+  background-image: $primory-gradient-color;
 
   display: flex;
   flex-direction: column;
@@ -23,13 +23,6 @@ main {
   }
 }
 
-h1 {
-  line-height: 1.5;
-  font-size: 22px;
-  text-align: center;
-  padding: 8px;
-}
-
 img {
   max-width: 150px;
   margin-bottom: 20px;
@@ -45,7 +38,7 @@ nav {
   li:first-child {
     &:hover {
       transition: ease 0.2s;
-      color: $main-contrast-color;
+      color: $primory-contrast-color;
     }
   }
   .disabled {

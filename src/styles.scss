@@ -6,7 +6,7 @@ body {
   padding: 0;
   background-color: #e3e3e3;
   font-family: "Quicksand", sans-serif;
-  color: $main-font-color;
+  color: $primory-font-color;
 
   display: flex;
   justify-content: center;
@@ -18,12 +18,21 @@ body {
   bottom: 0;
   right: 0;
 }
+
 li {
   text-decoration: none;
   list-style: none;
-  color: $main-font-color;
+  color: $primory-font-color;
 }
+
 a {
   text-decoration: none;
-  color: $main-font-color;
+  color: $primory-font-color;
+}
+
+h1 {
+  line-height: 1.5;
+  font-size: 22px;
+  text-align: center;
+  padding: 8px;
 }

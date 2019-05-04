@@ -1,0 +1,42 @@
+@import "~src/variables";
+
+main {
+  background-image: $primory-gradient-color;
+  padding: 20px 80px 80px 80px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  @media screen and (min-width: 700px) {
+    padding: 50px 190px;
+    position: relative;
+    border-radius: 5px;
+  }
+}
+
+div {
+  padding: 10px;
+}
+
+.links {
+  display: flex;
+  min-width: 185px;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px $primory-contrast-color;
+  cursor: pointer;
+
+  &:hover {
+    transition: ease 0.2s;
+    color: $primory-color;
+    background-color: $primory-contrast-color;
+  }
+}
+
+p:first-child {
+  font-size: 20px;
+  padding-right: 17px;
+}
