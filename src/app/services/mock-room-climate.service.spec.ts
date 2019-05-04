@@ -15,6 +15,13 @@ describe("MockRoomClimateService", () => {
     expect(service.mockHouse.rooms.length).toBe(3);
   });
 
+  it("should not update if update has already started", () => {
+    const service: MockRoomClimateService = TestBed.get(MockRoomClimateService);
+    expect(service.updateStarted).toEqual(false);
+    service.startClimateUpdate();
+    expect(service.updateStarted).toEqual(true);
+  });
+
   it("getRandomFloat should return a random number within a specified range through a specified callback", () => {
     const service: MockRoomClimateService = TestBed.get(MockRoomClimateService);
     const testReturn = function(number: number) {

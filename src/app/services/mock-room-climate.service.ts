@@ -45,18 +45,25 @@ export class MockRoomClimateService {
   };
 
   timerId: any;
+  updateStarted: boolean = false;
 
   constructor() {}
 
   startClimateUpdate() {
-    this.timerId = setInterval(() => {
-      for (let i = 0; i < this.mockHouse.rooms.length; i++) {
-        const room = this.mockHouse.rooms[i];
+    if (this.updateStarted) {
+      return;
+    } else {
+      this.updateStarted = true;
 
-        this.getRandomFloat(16, 30, room.updateTemperature.bind(room));
-        this.getRandomFloat(0, 100, room.updateHumidity.bind(room));
-      }
-    }, 5000);
+      this.timerId = setInterval(() => {
+        for (let i = 0; i < this.mockHouse.rooms.length; i++) {
+          const room = this.mockHouse.rooms[i];
+
+          this.getRandomFloat(16, 30, room.updateTemperature.bind(room));
+          this.getRandomFloat(0, 100, room.updateHumidity.bind(room));
+        }
+      }, 5000);
+    }
   }
 
   getClimateData(): Observable<IHouse> {
