@@ -3,9 +3,13 @@
 
 main {
   background-image: $primory-gradient-color;
-  padding: 20px 80px 80px 80px;
+  padding: 20px 20px 20px 20px;
 
   @extend %bg-cover;
+
+  @media screen and (min-width: 340px) {
+    padding: 20px 80px 80px 80px;
+  }
 
   @media screen and (min-width: 700px) {
     padding: 50px 190px;
@@ -20,16 +24,23 @@ div {
 
 .links {
   display: flex;
-  min-width: 185px;
-  justify-content: space-between;
-  align-items: center;
+
   border: solid 2px $primory-contrast-color;
   cursor: pointer;
+
+  display: block;
 
   &:hover {
     transition: ease 0.2s;
     color: $primory-color;
     background-color: $primory-contrast-color;
+  }
+
+  @media screen and (min-width: 380px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 185px;
   }
 }
 
