@@ -1,0 +1,53 @@
+@import "~src/variables";
+@import "~src/placeholders";
+
+main {
+  background-image: $primory-gradient-color;
+  padding: 20px 20px 20px 20px;
+
+  @extend %bg-cover;
+
+  padding: 50px 80px 80px 80px;
+
+  @media screen and (min-width: 700px) {
+    padding: 50px 80px;
+    position: relative;
+    border-radius: 5px;
+  }
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (min-width: 500px) {
+    flex-direction: row;
+  }
+}
+
+div i {
+  font-size: 85px;
+  color: $secondary-color;
+  margin-right: 20px;
+  text-align: center;
+
+  @media screen and (min-width: 340px) {
+    padding: 50px 0;
+  }
+}
+
+a {
+  display: flex;
+  align-items: center;
+  &:hover {
+    transition: ease 0.2s;
+    color: $primory-contrast-color;
+  }
+  i {
+    padding-right: 10px;
+    color: $primory-contrast-color;
+    font-size: 28px;
+  }
+}
