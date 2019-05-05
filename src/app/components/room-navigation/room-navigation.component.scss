@@ -2,33 +2,71 @@
 @import "~src/placeholders";
 
 main {
-  background-image: $primory-gradient-color;
   padding: 20px 20px 20px 20px;
 
   @extend %bg-cover;
 
-  @media screen and (min-width: 340px) {
+  background-image: $bg-house;
+  background-repeat: repeat-y;
+  background-size: cover;
+
+  @media screen and (min-width: $mobile-small) {
     padding: 20px 80px 80px 80px;
   }
 
-  @media screen and (min-width: 700px) {
-    padding: 50px 190px;
+  @media screen and (min-width: $tablet) {
+    border: solid 2px;
+    border-color: orange;
+    background-image: none;
+
+    padding: 0;
     position: relative;
-    border-radius: 5px;
   }
 }
 
+.climate {
+  position: absolute;
+  color: $primory-contrast-color;
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+  }
+}
+
+//Living-room
+.climate_0 {
+  top: 272px;
+  right: 212px;
+}
+
+//Kitchen
+.climate_1 {
+  top: 171px;
+  right: 101px;
+}
+
+//Bedrom
+.climate_2 {
+  top: 378px;
+  right: 137px;
+}
+
 div {
-  padding: 10px;
+  //border: 1px solid red;
+}
+
+.flex {
+  display: flex;
 }
 
 .links {
   display: flex;
-
+  margin: 10px;
+  padding: 10px;
+  background-color: $primory-color;
   border: solid 2px $primory-contrast-color;
   cursor: pointer;
-
-  display: block;
 
   &:hover {
     transition: ease 0.2s;
@@ -36,7 +74,7 @@ div {
     background-color: $primory-contrast-color;
   }
 
-  @media screen and (min-width: 380px) {
+  @media screen and (min-width: $mobile-small) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +82,31 @@ div {
   }
 }
 
+img {
+  max-height: 500px;
+}
+
 p:first-child {
   font-size: 20px;
   padding-right: 17px;
+}
+
+span {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .hide-tablet {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
+  }
 }

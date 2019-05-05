@@ -2,18 +2,19 @@
 @import "~src/placeholders";
 
 main {
-  background-image: $primory-gradient-color;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @extend %bg-cover;
+  background-image: $bg-office;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   padding: 5px 30px 30px 30px;
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: $tablet) {
     padding: 0px 190px;
     position: relative;
     border-radius: 5px;
@@ -24,18 +25,24 @@ img {
   max-width: 150px;
   margin-bottom: 20px;
 
-  @media screen and (min-width: 460px) {
+  @media screen and (min-width: $mobile-large) {
     max-width: 240px;
   }
 }
 
 nav {
   margin-bottom: 50px;
+  li {
+    padding: 10px 40px;
+    background-color: $button-color;
+    margin: 5px;
+  }
 
   li:first-child {
     &:hover {
       transition: ease 0.2s;
       color: $primory-contrast-color;
+      background-color: $primory-color;
     }
   }
   .disabled {
