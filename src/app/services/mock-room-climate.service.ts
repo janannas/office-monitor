@@ -11,33 +11,33 @@ export class MockRoomClimateService implements IRoomClimateService {
     rooms: [
       {
         name: "Vardagsrum",
-        temperature: 24,
+        temperature: 24.5,
         updateTemperature(temperature: number) {
           return (this.temperature = temperature);
         },
-        humidity: 2,
+        humidity: 26,
         updateHumidity(humidity: number) {
           return (this.humidity = humidity);
         }
       },
       {
         name: "Kök",
-        temperature: 28,
+        temperature: 28.1,
         updateTemperature(temperature: number) {
           return (this.temperature = temperature);
         },
-        humidity: 0.95,
+        humidity: 88.9,
         updateHumidity(humidity: number) {
           return (this.humidity = humidity);
         }
       },
       {
         name: "Sovrum",
-        temperature: 18,
+        temperature: 18.8,
         updateTemperature(temperature: number) {
           return (this.temperature = temperature);
         },
-        humidity: 0.33,
+        humidity: 3.3,
         updateHumidity(humidity: number) {
           return (this.humidity = humidity);
         }
@@ -76,7 +76,7 @@ export class MockRoomClimateService implements IRoomClimateService {
       Math.floor(Math.random() * (max - min + 1)) +
       min +
       "." +
-      Math.floor(Math.random() * 100);
+      Math.floor(Math.random() * 10);
 
     return fn(randomFloat);
   }
