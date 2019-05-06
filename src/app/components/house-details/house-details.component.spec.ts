@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 
-import { RoomNavigationComponent } from "./room-navigation.component";
+import { houseDetailsComponent } from "./house-details.component";
 
-describe("RoomNavigationComponent", () => {
-  let component: RoomNavigationComponent;
-  let fixture: ComponentFixture<RoomNavigationComponent>;
+describe("houseDetailsComponent", () => {
+  let component: houseDetailsComponent;
+  let fixture: ComponentFixture<houseDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes([])],
-      declarations: [RoomNavigationComponent]
+      declarations: [houseDetailsComponent]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RoomNavigationComponent);
+    fixture = TestBed.createComponent(houseDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

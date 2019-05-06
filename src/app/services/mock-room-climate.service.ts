@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { of, Observable } from "rxjs";
 import { IRoomClimateService } from "../interfaces/IRoomClimateService";
-import { IHouse } from "../interfaces/IHouse";
+import { IHouses } from "../interfaces/IHouses";
 
 @Injectable({
   providedIn: "root"
 })
 export class MockRoomClimateService implements IRoomClimateService {
-  mockHouse: IHouse = {
+  /* mockHouse: IHouse = {
     rooms: [
       {
         name: "Vardagsrum",
@@ -43,7 +43,130 @@ export class MockRoomClimateService implements IRoomClimateService {
         }
       }
     ]
-  };
+  }; */
+
+  mockHouses: IHouses[] = [
+    {
+      house: {
+        id: "house1",
+        rooms: [
+          {
+            name: "Vardagsrum1",
+            temperature: 24.5,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 26,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          },
+          {
+            name: "Kök1",
+            temperature: 28.1,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 88.9,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          },
+          {
+            name: "Sovrum1",
+            temperature: 18.8,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 3.3,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          }
+        ]
+      }
+    },
+    {
+      house: {
+        id: "house2",
+        rooms: [
+          {
+            name: "Vardagsrum2",
+            temperature: 24.5,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 26,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          },
+          {
+            name: "Kök2",
+            temperature: 28.1,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 88.9,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          },
+          {
+            name: "Sovrum2",
+            temperature: 18.8,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 3.3,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          }
+        ]
+      }
+    },
+    {
+      house: {
+        id: "house3",
+        rooms: [
+          {
+            name: "Vardagsrum3",
+            temperature: 24.5,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 26,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          },
+          {
+            name: "Kök3",
+            temperature: 28.1,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 88.9,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          },
+          {
+            name: "Sovrum3",
+            temperature: 18.8,
+            updateTemperature(temperature: number) {
+              return (this.temperature = temperature);
+            },
+            humidity: 3.3,
+            updateHumidity(humidity: number) {
+              return (this.humidity = humidity);
+            }
+          }
+        ]
+      }
+    }
+  ];
 
   timerId: any;
   updateStarted: boolean = false;
@@ -57,18 +180,25 @@ export class MockRoomClimateService implements IRoomClimateService {
       this.updateStarted = true;
 
       this.timerId = setInterval(() => {
-        for (let i = 0; i < this.mockHouse.rooms.length; i++) {
-          const room = this.mockHouse.rooms[i];
-
-          this.getRandomFloat(16, 30, room.updateTemperature.bind(room));
-          this.getRandomFloat(0, 100, room.updateHumidity.bind(room));
+        for (let i = 0; i < this.mockHouses.length; i++) {
+          const rooms = this.mockHouses[i].house.rooms;
+          //console.log(room);
+          for (let i = 0; i < rooms.length; i++) {
+            //console.log(rooms[i].updateHumidity);
+            this.getRandomFloat(
+              16,
+              30,
+              rooms[i].updateTemperature.bind(rooms[i])
+            );
+            this.getRandomFloat(0, 100, rooms[i].updateHumidity.bind(rooms[i]));
+          }
         }
       }, 5000);
     }
   }
 
-  getClimateData(): Observable<IHouse> {
-    return of(this.mockHouse);
+  getClimateData(): Observable<IHouses[]> {
+    return of(this.mockHouses);
   }
 
   getRandomFloat(min: number, max: number, fn: Function): Function {

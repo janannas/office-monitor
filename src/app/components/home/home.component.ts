@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { MockRoomClimateService } from "src/app/services/mock-room-climate.service";
+import { IHouses } from "src/app/interfaces/IHouses";
 
 @Component({
   selector: "app-home",
@@ -6,7 +8,18 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  homes: IHouses[];
+
+  constructor(private service: MockRoomClimateService) {
+    this.service.getClimateData().subscribe(
+      myClimateData => {
+        this.homes = myClimateData;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
   ngOnInit() {}
 }

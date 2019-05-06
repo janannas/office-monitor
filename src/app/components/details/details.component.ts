@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { MockRoomClimateService } from "src/app/services/mock-room-climate.service";
-import { IHouse } from "src/app/interfaces/IHouse";
+import { IHouses } from "src/app/interfaces/IHouses";
 import { IRooms } from "src/app/interfaces/IRooms";
 
 @Component({
@@ -10,7 +10,7 @@ import { IRooms } from "src/app/interfaces/IRooms";
   styleUrls: ["./details.component.scss"]
 })
 export class DetailsComponent implements OnInit {
-  house: IHouse;
+  houses: IHouses[];
   room: IRooms;
 
   constructor(
@@ -22,12 +22,12 @@ export class DetailsComponent implements OnInit {
 
     this.service.getClimateData().subscribe(
       roomsData => {
-        this.house = roomsData;
+        this.houses = roomsData;
 
         this.route.paramMap.subscribe(myParams => {
           let room = myParams.get("id");
 
-          this.searchRooms(room);
+          //this.searchRooms(room);
         });
       },
       error => {
@@ -36,14 +36,14 @@ export class DetailsComponent implements OnInit {
     );
   }
 
-  searchRooms(myId: string): void {
-    for (let i = 0; i < this.house.rooms.length; i++) {
-      const elem = this.house.rooms[i];
+  /* searchRooms(myId: string): void {
+    for (let i = 0; i < this.houses.length; i++) {
+      const elem = this.houses[i].house.rooms[i];
 
       if (myId == String(elem.name)) {
         this.room = elem;
       }
     }
-  }
+  } */
   ngOnInit() {}
 }

@@ -9,16 +9,18 @@
   <img src="../assets/images/home_icon.svg" alt="Product icon" />
   <h2>Välj ett hus:</h2>
   <nav>
-    <a
-      routerLink="/navigation"
-      routerLinkActive="linkActive"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <li>Hus1</li>
-    </a>
+    <div *ngFor="let home of homes">
+      <a
+        routerLink="/homes/{{ home.house.id }}"
+        routerLinkActive="linkActive"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <li>{{ home.house.id }}</li>
+      </a>
+    </div>
 
-    <li class="disabled">Hus2</li>
+    <!-- <li class="disabled">Hus2</li>
 
-    <li class="disabled">Hus3</li>
+    <li class="disabled">Hus3</li> -->
   </nav>
 </main>

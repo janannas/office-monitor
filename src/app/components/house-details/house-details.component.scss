@@ -52,27 +52,16 @@ main {
   right: 137px;
 }
 
-div {
-  //border: 1px solid red;
-}
-
 .flex {
   display: flex;
 }
 
-.links {
+.climate-data-container {
   display: flex;
   margin: 10px;
   padding: 10px;
   background-color: $primory-color;
   border: solid 2px $primory-contrast-color;
-  cursor: pointer;
-
-  &:hover {
-    transition: ease 0.2s;
-    color: $primory-color;
-    background-color: $primory-contrast-color;
-  }
 
   @media screen and (min-width: $mobile-small) {
     display: flex;
@@ -86,9 +75,22 @@ img {
   max-height: 500px;
 }
 
-p:first-child {
+h1 {
+  text-transform: uppercase;
+}
+
+.title {
+  position: absolute;
+  background-color: $text-bg-color;
+  margin: 5px 0 0 5px;
+}
+
+.typography-small {
+  font-size: 16px;
+}
+
+.typography-large {
   font-size: 20px;
-  padding-right: 17px;
 }
 
 span {

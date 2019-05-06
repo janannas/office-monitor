@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
-import { RoomNavigationComponent } from "./components/room-navigation/room-navigation.component";
+import { houseDetailsComponent } from "./components/house-details/house-details.component";
 import { DetailsComponent } from "./components/details/details.component";
 
 @NgModule({
@@ -13,7 +13,7 @@ import { DetailsComponent } from "./components/details/details.component";
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    RoomNavigationComponent,
+    houseDetailsComponent,
     DetailsComponent
   ],
   imports: [BrowserModule, AppRoutingModule],

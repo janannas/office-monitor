@@ -1,12 +1,12 @@
-import { IHouse } from "./IHouse";
+import { IHouses } from "./IHouses";
 import { Observable } from "rxjs";
 
 export interface IRoomClimateService {
-  mockHouse: IHouse;
+  mockHouses: IHouses[];
   timerId: any;
   updateStarted: boolean;
   startClimateUpdate: VoidFunction;
-  getClimateData: () => Observable<IHouse>;
+  getClimateData: () => Observable<IHouses[]>;
   getRandomFloat: Function;
   destroyClimateUpdate: VoidFunction;
 }

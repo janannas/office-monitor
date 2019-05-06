@@ -1,16 +1,19 @@
 <main class="hide-tablet">
-  <h1>Välj Rum:</h1>
-  <div *ngFor="let room of rooms">
-    <a routerLink="/house/{{ room.name }}">
-      <div class="links">
-        <p>{{ room.name }}</p>
+  <h1>{{ house.id }}</h1>
+  <div *ngFor="let room of house.rooms">
+    <div class="climate-data-container" routerLink="/house/{{ room.name }}">
+      <p class="typography-large">{{ room.name }}</p>
+      <div class="typography-small">
         <p>Temp: {{ room.temperature }} &#176;</p>
+        <p>LF: {{ room.humidity }} %</p>
       </div>
-    </a>
+    </div>
   </div>
+  <span>*LF = Luftfuktighet</span>
 </main>
 
 <main class="hide-mobile">
+  <h1 class="title">{{ house.id }}</h1>
   <div class="flex">
     <img
       src="../../../assets/images/purple_house.png"
@@ -19,7 +22,7 @@
 
     <img src="../../../assets/images/floor_plan.png" alt="The floor plan" />
     <div
-      *ngFor="let room of rooms; let i = index"
+      *ngFor="let room of house.rooms; let i = index"
       class="climate climate_{{ i }}"
     >
       <p>{{ room.name }}</p>
