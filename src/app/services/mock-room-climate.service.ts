@@ -7,48 +7,12 @@ import { IHouses } from "../interfaces/IHouses";
   providedIn: "root"
 })
 export class MockRoomClimateService implements IRoomClimateService {
-  /* mockHouse: IHouse = {
-    rooms: [
-      {
-        name: "Vardagsrum",
-        temperature: 24.5,
-        updateTemperature(temperature: number) {
-          return (this.temperature = temperature);
-        },
-        humidity: 26,
-        updateHumidity(humidity: number) {
-          return (this.humidity = humidity);
-        }
-      },
-      {
-        name: "Kök",
-        temperature: 28.1,
-        updateTemperature(temperature: number) {
-          return (this.temperature = temperature);
-        },
-        humidity: 88.9,
-        updateHumidity(humidity: number) {
-          return (this.humidity = humidity);
-        }
-      },
-      {
-        name: "Sovrum",
-        temperature: 18.8,
-        updateTemperature(temperature: number) {
-          return (this.temperature = temperature);
-        },
-        humidity: 3.3,
-        updateHumidity(humidity: number) {
-          return (this.humidity = humidity);
-        }
-      }
-    ]
-  }; */
-
   mockHouses: IHouses[] = [
     {
       house: {
         id: "house1",
+        image: "../../assets/images/purple_house.png",
+        alt: "image of house1",
         rooms: [
           {
             name: "Vardagsrum1",
@@ -89,6 +53,8 @@ export class MockRoomClimateService implements IRoomClimateService {
     {
       house: {
         id: "house2",
+        image: "../../assets/images/purple_house2.png",
+        alt: "image of house2",
         rooms: [
           {
             name: "Vardagsrum2",
@@ -129,6 +95,8 @@ export class MockRoomClimateService implements IRoomClimateService {
     {
       house: {
         id: "house3",
+        image: "../../assets/images/purple_house3.png",
+        alt: "image of house3",
         rooms: [
           {
             name: "Vardagsrum3",
@@ -182,9 +150,8 @@ export class MockRoomClimateService implements IRoomClimateService {
       this.timerId = setInterval(() => {
         for (let i = 0; i < this.mockHouses.length; i++) {
           const rooms = this.mockHouses[i].house.rooms;
-          //console.log(room);
+
           for (let i = 0; i < rooms.length; i++) {
-            //console.log(rooms[i].updateHumidity);
             this.getRandomFloat(
               16,
               30,
