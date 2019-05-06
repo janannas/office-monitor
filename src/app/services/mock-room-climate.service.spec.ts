@@ -10,9 +10,16 @@ describe("MockRoomClimateService", () => {
     expect(service).toBeTruthy();
   });
 
-  it("mockHouse.rooms should have the length of 3", () => {
+  it("mockHouses should contain 3 houses", () => {
     const service: MockRoomClimateService = TestBed.get(MockRoomClimateService);
-    expect(service.mockHouse.rooms.length).toBe(3);
+    expect(service.mockHouses.length).toBe(3);
+  });
+
+  it("mockHouses.house.rooms should have the length of 3", () => {
+    const service: MockRoomClimateService = TestBed.get(MockRoomClimateService);
+    for (let i = 0; i < service.mockHouses.length; i++) {
+      expect(service.mockHouses[i].house.rooms.length).toBe(3);
+    }
   });
 
   it("should not update if update has already started", () => {

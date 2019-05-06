@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MockRoomClimateService } from "src/app/services/mock-room-climate.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 import { IHouses } from "src/app/interfaces/IHouses";
 import { IHouse } from "src/app/interfaces/IHouse";
 
@@ -24,9 +24,10 @@ export class houseDetailsComponent implements OnInit {
       housesData => {
         this.homes = housesData;
 
-        this.route.paramMap.subscribe(myParams => {
+        this.route.paramMap.subscribe((myParams: ParamMap) => {
           let house = myParams.get("id");
-          this.searchHouse(house);
+
+          this.searchHouses(house);
         });
       },
       error => {
@@ -35,7 +36,7 @@ export class houseDetailsComponent implements OnInit {
     );
   }
 
-  searchHouse(myId: string): void {
+  searchHouses(myId: string): void {
     for (let i = 0; i < this.homes.length; i++) {
       const elem = this.homes[i].house;
 

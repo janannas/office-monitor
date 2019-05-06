@@ -11,16 +11,12 @@
   <nav>
     <div *ngFor="let home of homes">
       <a
-        routerLink="/homes/{{ home.house.id }}"
+        [routerLink]="['homes', home.house.id]"
         routerLinkActive="linkActive"
         [routerLinkActiveOptions]="{ exact: true }"
       >
         <li>{{ home.house.id }}</li>
       </a>
     </div>
-
-    <!-- <li class="disabled">Hus2</li>
-
-    <li class="disabled">Hus3</li> -->
   </nav>
 </main>
