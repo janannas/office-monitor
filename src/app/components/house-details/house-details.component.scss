@@ -24,6 +24,22 @@ main {
   }
 }
 
+a {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+
+  &:hover {
+    transition: ease 0.2s;
+    color: $primory-contrast-color;
+  }
+  i {
+    padding-right: 10px;
+    color: $primory-contrast-color;
+    font-size: 28px;
+  }
+}
+
 .climate {
   position: absolute;
   color: $primory-contrast-color;

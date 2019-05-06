@@ -1,7 +1,14 @@
 <main class="hide-tablet">
-  <h1>{{ house.id }}</h1>
+  <div>
+    <h1>{{ house.id }}</h1>
+
+    <a routerLink="" routerLinkActive="linkActive">
+      <i class="wi  wi-direction-left"></i>Tillbaka
+    </a>
+  </div>
+
   <div *ngFor="let room of house.rooms">
-    <div class="climate-data-container" routerLink="/house/{{ room.name }}">
+    <div class="climate-data-container">
       <p class="typography-large">{{ room.name }}</p>
       <div class="typography-small">
         <p>Temp: {{ room.temperature }} &#176;</p>
@@ -12,6 +19,9 @@
   <span>*LF = Luftfuktighet</span>
 </main>
 
+<a routerLink="" routerLinkActive="linkActive">
+  <i class="wi  wi-direction-left"></i>Tillbaka
+</a>
 <main class="hide-mobile">
   <h1 class="title">{{ house.id }}</h1>
   <div class="flex">
