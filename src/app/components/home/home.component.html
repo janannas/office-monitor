@@ -9,7 +9,7 @@
   <img src="../assets/images/home_icon.svg" alt="Product icon" />
   <h2>Välj ett hus:</h2>
   <nav>
-    <div *ngFor="let home of homes">
+    <div *ngFor="let home of houses">
       <a
         [routerLink]="['homes', home.house.id]"
         routerLinkActive="linkActive"

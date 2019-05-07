@@ -25,6 +25,6 @@ describe("HomeComponent", () => {
   });
 
   it("homes should have the length of 3", () => {
-    expect(component.homes.length).toBe(3);
+    expect(component.houses.length).toBe(3);
   });
 });

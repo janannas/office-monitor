@@ -8,12 +8,12 @@ import { IHouses } from "src/app/interfaces/IHouses";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  homes: IHouses[];
+  houses: IHouses[];
 
   constructor(private service: MockRoomClimateService) {
     this.service.getClimateData().subscribe(
-      myClimateData => {
-        this.homes = myClimateData;
+      myHouseData => {
+        this.houses = myHouseData;
       },
       error => {
         console.log(error);

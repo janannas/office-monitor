@@ -10,7 +10,7 @@ import { IHouse } from "src/app/interfaces/IHouse";
   styleUrls: ["./house-details.component.scss"]
 })
 export class houseDetailsComponent implements OnInit {
-  homes: IHouses[];
+  houses: IHouses[];
   house: IHouse;
 
   constructor(
@@ -21,8 +21,8 @@ export class houseDetailsComponent implements OnInit {
     this.service.startClimateUpdate();
 
     this.service.getClimateData().subscribe(
-      housesData => {
-        this.homes = housesData;
+      myHouseData => {
+        this.houses = myHouseData;
 
         this.route.paramMap.subscribe((myParams: ParamMap) => {
           let house = myParams.get("id");
@@ -37,8 +37,8 @@ export class houseDetailsComponent implements OnInit {
   }
 
   searchHouses(myId: string): void {
-    for (let i = 0; i < this.homes.length; i++) {
-      const elem = this.homes[i].house;
+    for (let i = 0; i < this.houses.length; i++) {
+      const elem = this.houses[i].house;
 
       if (myId == String(elem.id)) {
         this.house = elem;
