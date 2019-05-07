@@ -6,7 +6,7 @@ main {
 
   @media screen and (min-width: $tablet) {
     border: solid 2px;
-    border-color: orange;
+    border-color: $primory-contrast-color;
     background-image: none;
 
     padding: 0;
@@ -20,6 +20,45 @@ main {
   @media screen and (min-width: $mobile-small) {
     padding: 20px 80px 80px 80px;
   }
+}
+
+img {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+
+  @media screen and (min-width: $tablet) {
+    position: relative;
+    width: auto;
+    height: auto;
+    object-fit: fill;
+
+    max-height: 500px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+h1 {
+  background-color: $secondary-color;
+}
+
+.title {
+  position: absolute;
+  margin: 5px 0 0 5px;
+}
+
+.typography-small {
+  font-size: 16px;
+}
+
+.typography-large {
+  font-size: 20px;
 }
 
 a {
@@ -48,6 +87,13 @@ a {
     color: $primory-contrast-color;
     font-size: 28px;
   }
+}
+
+span {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 14px;
+  text-align: right;
 }
 
 .climate {
@@ -95,62 +141,15 @@ a {
   }
 }
 
-img {
-  display: block;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-
-  @media screen and (min-width: $tablet) {
-    position: relative;
-    width: auto;
-    height: auto;
-    object-fit: fill;
-
-    max-height: 500px;
-  }
-}
-
-h1 {
-  background-color: $secondary-color;
-}
-
-.title {
-  position: absolute;
-  margin: 5px 0 0 5px;
-}
-
-.typography-small {
-  font-size: 16px;
-}
-
-.typography-large {
-  font-size: 20px;
-}
-
-span {
-  margin: 0;
-  padding-top: 5px;
-  font-size: 14px;
-  text-align: right;
-}
-
 .hide-mobile {
   display: none;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $tablet) {
   .hide-tablet {
     display: none;
   }
   .hide-mobile {
-    display: block;
+    display: flex;
   }
-}
-
-//Placed here to make sure display: block; is overwritten on elements with both
-.flex {
-  display: flex;
 }

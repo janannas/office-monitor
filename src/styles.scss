@@ -16,6 +16,13 @@ body {
   @extend %bg-cover;
 }
 
+h1 {
+  line-height: 1.5;
+  font-size: 22px;
+  text-align: center;
+  padding: 8px;
+}
+
 li {
   text-decoration: none;
   list-style: none;
@@ -25,11 +32,4 @@ li {
 a {
   text-decoration: none;
   color: $primory-font-color;
-}
-
-h1 {
-  line-height: 1.5;
-  font-size: 22px;
-  text-align: center;
-  padding: 8px;
 }
